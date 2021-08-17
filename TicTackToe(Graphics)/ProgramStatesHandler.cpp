@@ -72,6 +72,7 @@ void ProgramStatesHandler::initializeEndScreen(Board& board, sf::Event& event, s
 	window.draw(menuButton.getSprite());
 	if (menuButton.isPressed(event)) {
 		menuButton.playSound();
+		areThereTwoPlayers = false;
 		currentState = States::MENU;
 	}
 
