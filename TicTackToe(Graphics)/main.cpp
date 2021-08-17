@@ -1,7 +1,7 @@
 #include <SFML/Graphics.hpp>
 #include <cstdlib>
 #include <ctime>
-#include <iostream>
+
 #include "Board.h"
 #include "ProgramStatesHandler.h"
 
@@ -32,19 +32,12 @@ int main() {
 			programState.getProgramState() != ProgramStatesHandler::MENU) {
 			programState.setProgramState(ProgramStatesHandler::ENDGAME);			
 		}
-		if (programState.getProgramState() == ProgramStatesHandler::MENU) {
-			programState.initializeMenu(board, window, event);
-			std::cout << "MENU\n";
-		}
-		else if (programState.getProgramState() == ProgramStatesHandler::IN_GAME) {
-			programState.initializeGame(board, event, window);
-			std::cout << "IN_GAME\n";
-		}
-		else if (programState.getProgramState() == ProgramStatesHandler::ENDGAME) {
-			programState.initializeEndScreen(board, event, window);
-			std::cout << "ENDGAME\n";
-		}
-			window.display();		
+		if (programState.getProgramState() == ProgramStatesHandler::MENU) programState.initializeMenu(board, window, event);
+		else if (programState.getProgramState() == ProgramStatesHandler::IN_GAME) programState.initializeGame(board, event, window);
+		
+		else if (programState.getProgramState() == ProgramStatesHandler::ENDGAME) programState.initializeEndScreen(board, event, window);
+			
+		window.display();		
 
 	}
 	return 0;

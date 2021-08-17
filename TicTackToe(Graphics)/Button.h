@@ -2,6 +2,7 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
 #include <string>
+
 #include "Delayer.h"
 
 class Button {
@@ -45,8 +46,6 @@ private:
 	
 
 	sf::SoundBuffer m_sBuffer;
-	sf::Sound m_sound;
-
-	sf::Clock clock;
+	sf::Sound m_sound;	
 };
 

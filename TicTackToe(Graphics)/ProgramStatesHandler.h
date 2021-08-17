@@ -1,7 +1,7 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
-#include <iostream>
+
 #include "Button.h"
 #include "Board.h"
 class ProgramStatesHandler {
@@ -28,14 +28,13 @@ public:
 		endSoundLost.setBuffer(endSoundBuffLost);
 
 		draftSoundBuff.loadFromFile("Sounds\\draft.wav");
-		draftSound.setBuffer(draftSoundBuff);
+		draftSound.setBuffer(draftSoundBuff);		
 		
-		//
 		menuBgrAnimTexture.loadFromFile("Textures\\menuBgrAnim.png");
 		menuBgrAnimSprite.setTexture(menuBgrAnimTexture);
 		menuBgrAnimSprite.setTextureRect(sf::IntRect(0, 0, 450, 450));
 		menuBgrAnimSprite.setPosition(sf::Vector2f(0, 0));
-		//
+		
 		endFont.loadFromFile("Fonts\\ka1.ttf");
 		endText.setFont(endFont);
 		endText.setCharacterSize(50);
